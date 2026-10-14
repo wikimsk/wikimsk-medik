@@ -161,6 +161,67 @@ nav {
 
 #mw-navigation {
 	border-right: 1px solid #e5e5e5;
+	background-color: #f8f9fa;
+	scrollbar-width: thin;
+}
+
+@media ( min-width: 768px ) {
+	#mw-navigation {
+		position: sticky;
+		top: 0;
+		height: 100vh;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+
+	#sidebar-toc #toc {
+		float: none;
+		min-width: 0;
+		width: 100%;
+		max-width: 100%;
+		border: 0;
+		background: transparent;
+	}
+
+	#sidebar-toc .toctitle {
+		display: none;
+	}
+
+	#sidebar-toc a.active {
+		font-weight: bold;
+		border-left: 6px solid #b3e5ff;
+	}
+}
+
+#ca-talk {
+	display: none;
+}
+
+.sidebar-nzcmm {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+	margin-top: 1.25rem;
+	padding: 1.5rem 0.5rem;
+	border-block: 2px solid #17a2b8;
+	background-color: #ebecec;
+	text-align: center;
+}
+
+.sidebar-nzcmm span {
+	color: #444;
+	font-size: 0.875rem;
+	font-style: italic;
+}
+
+.footer-logos {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	padding: 1rem;
 }
 
 #mw-navigation h2 {

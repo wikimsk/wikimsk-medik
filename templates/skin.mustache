@@ -25,10 +25,14 @@
 					<div id="site-navigation">
 						{{{html-site-navigation}}}
 					</div>
-					<div class="sidebar-nzcmm">
+					{{#has-sidebar-partner-logos}}
+					<div class="sidebar-partner-logos">
 						<span>Affiliated with</span>
-						<a href="https://www.nzcmm.org.nz/"><img src="/w/resources/assets/nzcmm-medium.png" alt="New Zealand College of Musculoskeletal Medicine" width="200" height="150"></a>
+						{{#sidebar-partner-logos}}
+						<a href="{{url}}"><img src="{{image}}" alt="{{alt}}" width="{{width}}" height="{{height}}"></a>
+						{{/sidebar-partner-logos}}
 					</div>
+					{{/has-sidebar-partner-logos}}
 				</nav>
 			</div>
 
@@ -59,9 +63,11 @@
 	</div>
 
 	{{{html-footer}}}
-	<div class="footer-logos">
-		<a href="https://www.nzcmm.org.nz/"><img src="/w/resources/assets/nzcmm-medium.png" alt="New Zealand College of Musculoskeletal Medicine" width="250" height="70"></a>
-		<a href="https://tmmfnz.org/"><img src="/w/resources/assets/tmmfnz.png" alt="TMMFNZ" width="156" height="78"></a>
+	{{#has-footer-partner-logos}}
+	<div class="footer-partner-logos">
+		{{#footer-partner-logos}}
+		<a href="{{url}}"><img src="{{image}}" alt="{{alt}}" width="{{width}}" height="{{height}}"></a>
+		{{/footer-partner-logos}}
 	</div>
+	{{/has-footer-partner-logos}}
 </div>
-

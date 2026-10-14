@@ -25,6 +25,17 @@ class MedikTemplate extends BaseTemplate {
 			'default' => 'col-xl-9',
 			'narrow' => 'col-xl-8',
 		];
+		$partnerLogos = RequestContext::getMain()->getConfig()->get( 'MedikPartnerLogos' );
+		$sidebarPartnerLogos = [];
+		$footerPartnerLogos = [];
+		foreach ( $partnerLogos as $logo ) {
+			if ( isset( $logo['sidebar'] ) ) {
+				$sidebarPartnerLogos[] = array_merge( $logo, $logo['sidebar'] );
+			}
+			if ( isset( $logo['footer'] ) ) {
+				$footerPartnerLogos[] = array_merge( $logo, $logo['footer'] );
+			}
+		}
 
 		echo $templateParser->processTemplate( 'skin', [
 			'medik-color' => RequestContext::getMain()->getConfig()->get( 'MedikColor' ),
@@ -32,6 +43,8 @@ class MedikTemplate extends BaseTemplate {
 			'html-search-userlinks' => $this->getSearch() . $this->getUserLinks(),
 			'html-navigation-heading' => $this->getMsg( 'navigation-heading' )->parse(),
 			'html-site-navigation' => $this->getSiteNavigation(),
+			'has-sidebar-partner-logos' => (bool)$sidebarPartnerLogos,
+			'sidebar-partner-logos' => $sidebarPartnerLogos,
 			'medik-content-width' => $contentWidth[
 				RequestContext::getMain()->getConfig()->get( 'MedikContentWidth' )
 				] ?? $contentWidth['default'],
@@ -50,6 +63,8 @@ class MedikTemplate extends BaseTemplate {
 			'html-categorylinks' => $this->getCategoryLinks(),
 			'html-dataaftercontent' => $this->getDataAfterContent() . $this->get( 'debughtml' ),
 			'html-footer' => $this->getFooterBlock(),
+			'has-footer-partner-logos' => (bool)$footerPartnerLogos,
+			'footer-partner-logos' => $footerPartnerLogos,
 		] );
 	}
 

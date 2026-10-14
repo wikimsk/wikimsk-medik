@@ -48,6 +48,24 @@
 			"value": "default",
 			"description": "Set the logo width."
 		},
+		"MedikPartnerLogos": {
+			"value": [
+				{
+					"url": "https://www.nzcmm.org.nz/",
+					"image": "/w/resources/assets/nzcmm-medium.png",
+					"alt": "New Zealand College of Musculoskeletal Medicine",
+					"sidebar": { "width": 200, "height": 150 },
+					"footer": { "width": 250, "height": 70 }
+				},
+				{
+					"url": "https://tmmfnz.org/",
+					"image": "/w/resources/assets/tmmfnz.png",
+					"alt": "TMMFNZ",
+					"footer": { "width": 156, "height": 78 }
+				}
+			],
+			"description": "Partner logos. Each entry has a URL, image URL, alt text, and optional sidebar and footer dimensions."
+		},
 		"MedikMobileSitename": {
 			"value": null,
 			"description": "Short sitename for mobile screens."

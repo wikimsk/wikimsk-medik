@@ -17,6 +17,21 @@ LocalSettings.php:
     wfLoadSkin( 'Medik' );
     $wgDefaultSkin = 'medik';
 
+Partner logos are configured with `$wgMedikPartnerLogos` in LocalSettings.php.
+Each entry needs `url`, `image`, and `alt`. Add a `sidebar` or `footer`
+section (or both) with `width` and `height` to display it in that location.
+Set the array to `[]` to hide all partner logos. For example:
+
+    $wgMedikPartnerLogos = [
+        [
+            'url' => 'https://example.org/',
+            'image' => '/w/resources/assets/partner.png',
+            'alt' => 'Example partner',
+            'sidebar' => [ 'width' => 200, 'height' => 150 ],
+            'footer' => [ 'width' => 250, 'height' => 70 ],
+        ],
+    ];
+
 For any additionaly info please visit the URL mentioned above.
 
 Release notes
